@@ -1,0 +1,23 @@
+{
+
+    "manifest_version": 2,
+    "name": "OpenInSteam",
+    "version": "1.0",
+  
+    "description": "Adds a button to open the current page in Steam.",
+  
+    "icons": {
+      "48": "icons/openinsteam-48.png"
+    },  
+
+    "content_scripts": [
+      {
+        "matches": ["*://store.steampowered.com/app/*"],
+        "js": ["openinsteam.js"]
+      },
+      {
+        "matches": ["*://store.steampowered.com/agecheck/app/*"],
+        "js": ["openinsteamage.js"]
+      }
+    ]
+  }
