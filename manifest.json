@@ -12,12 +12,9 @@
 
     "content_scripts": [
       {
-        "matches": ["*://store.steampowered.com/app/*"],
+        "exclude_matches": ["*://store.steampowered.com/cart/*", "*://store.steampowered.com/checkout/*"],
+        "matches": ["*://store.steampowered.com/*", "*://steamcommunity.com/*"],
         "js": ["openinsteam.js"]
-      },
-      {
-        "matches": ["*://store.steampowered.com/agecheck/app/*"],
-        "js": ["openinsteamage.js"]
       }
     ]
   }
