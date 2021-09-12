@@ -13,7 +13,7 @@
     "content_scripts": [
       {
         "exclude_matches": ["*://store.steampowered.com/cart/*", "*://store.steampowered.com/checkout/*"],
-        "matches": ["*://store.steampowered.com/*", "*://steamcommunity.com/*"],
+        "matches": ["*://store.steampowered.com/*", "*://steamcommunity.com/*", "*://help.steampowered.com/*"],
         "js": ["openinsteam.js"]
       }
     ]
