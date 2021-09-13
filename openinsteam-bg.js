@@ -12,14 +12,14 @@ async function getCurrentTabUrl() {
 
 const urlMatches = browser.runtime.getManifest().content_scripts[0].matches;
 
-browser.menus.create({
+browser.contextMenus.create({
   id: "open-in-steam",
   title: "Open in Steam",
   contexts: ["all"],
   documentUrlPatterns: urlMatches,
 });
 
-browser.menus.onClicked.addListener(function (info) {
+browser.contextMenus.onClicked.addListener(function (info) {
   if (info.menuItemId == "open-in-steam") {
     getCurrentTabUrl()
       .then((url) => {
