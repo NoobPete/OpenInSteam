@@ -1,20 +1,29 @@
 {
+  "manifest_version": 2,
+  "name": "OpenInSteam",
+  "version": "1.2",
 
-    "manifest_version": 2,
-    "name": "OpenInSteam",
-    "version": "1.2",
-  
-    "description": "Adds a button to open the current Steam page inside Steam.",
-  
-    "icons": {
-      "48": "icons/openinsteam-48.png"
-    },  
+  "description": "Adds a button to open the current Steam page inside Steam.",
 
-    "content_scripts": [
-      {
-        "exclude_matches": ["*://store.steampowered.com/cart/*", "*://store.steampowered.com/checkout/*"],
-        "matches": ["*://store.steampowered.com/*", "*://steamcommunity.com/*", "*://help.steampowered.com/*"],
-        "js": ["openinsteam.js"]
-      }
-    ]
-  }
+  "icons": {
+    "48": "icons/openinsteam-48.png"
+  },
+  "permissions": ["contextMenus", "tabs"],
+  "background": {
+    "scripts": ["openinsteam-bg.js"]
+  },
+  "content_scripts": [
+    {
+      "exclude_matches": [
+        "*://store.steampowered.com/cart/*",
+        "*://store.steampowered.com/checkout/*"
+      ],
+      "matches": [
+        "*://store.steampowered.com/*",
+        "*://steamcommunity.com/*",
+        "*://help.steampowered.com/*"
+      ],
+      "js": ["openinsteam.js"]
+    }
+  ]
+}
