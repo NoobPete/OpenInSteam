@@ -1,4 +1,4 @@
-async function getCurrentTabUrl() {
+function getCurrentTabUrl() {
   return new Promise((resolve, reject) => {
     browser.tabs
       .query({ currentWindow: true, active: true })
